@@ -1,0 +1,4 @@
+export DATA_SOURCE_NAME='postgresql://USER:PASS@{host}:5432/{db}?sslmode=require;'
+
+nohup bash -c '/home/{user}/dir_postgres_exporter/postgres_exporter' >/dev/null 2>&1 &
+# nohup bash -c '/opt/prometheus/postgres_exporter/postgres_exporter' >/dev/null 2>&1 &

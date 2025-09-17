@@ -1,0 +1,7 @@
+tvldd-dcdcb0160.delta.sbrf.ru	CI02754475-lnx-gotham_read	mainlttransport
+tvldd-dcdcb0159.delta.sbrf.ru	CI02754475-lnx-gotham_read	mainlttransport
+tvldd-dcdcb0110.delta.sbrf.ru	CI02754475-lnx-gotham_read	silttransport
+tvldd-dcdcb0111.delta.sbrf.ru	CI02754475-lnx-gotham_read	silttransport
+tvldd-dcdcb0162.delta.sbrf.ru	CI02754475-lnx-gotham_read	ltsearch
+tvldd-dcdcb0161.delta.sbrf.ru	CI02754475-lnx-gotham_read	ltsearch
+

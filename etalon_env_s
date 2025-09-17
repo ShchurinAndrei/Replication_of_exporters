@@ -1,0 +1,4 @@
+export DATA_SOURCE_NAME='postgresql://USER:PASS@{host}:5432/{db};'
+
+nohup bash -c '/home/{user}/dir_postgres_exporter/sql_exporter -config.file /home/{user}/dir_postgres_exporter/sql_exporter/sql_exporter.yml' >/dev/null 2>&1 &
+# nohup bash -c '/opt/prometheus/sql_exporter/sql_exporter -config.file /opt/prometheus/sql_exporter/sql_exporter.yml' >/dev/null 2>&1 &

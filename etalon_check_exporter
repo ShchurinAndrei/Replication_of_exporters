@@ -1,0 +1,27 @@
+#!/bin/bash
+
+DATE=$(date +"%Y-%m-%d")
+DIR="/opt/prometheus/check_exporter"
+
+if (( $(ps aux | grep node_exporter | grep -c -v grep) < 1 ))
+then
+		echo "$(date +"%Y-%m-%d %H:%M:%S") ATTENTION: node_exporter has been restarted" >> /opt/prometheus/check_exporter/check_${DATE}.log
+		nohup bash -c /opt/prometheus/node_exporter/node_exporter >/dev/null 2>&1 &
+fi
+
+if (( $(ps aux | grep postgres_exporter | grep -c -v  grep) < 1 ))
+then
+		echo "$(date +"%Y-%m-%d %H:%M:%S") ATTENTION: postgres_exporter has been restarted" >> /opt/prometheus/check_exporter/check_${DATE}.log
+		/opt/prometheus/postgres_exporter/env
+fi
+
+if (( $(ps aux | grep sql_exporter | grep -c -v  grep) < 1 ))
+then
+		echo "$(date +"%Y-%m-%d %H:%M:%S") ATTENTION: sql_exporter has been restarted" >> /opt/prometheus/check_exporter/check_${DATE}.log
+		/opt/prometheus/sql_exporter/env_s
+fi
+
+if [ $(date +%w) -eq 0 ] && [ $(date +%H%M) -eq 2359 ]
+then
+		find "$DIR" -maxdepth 1 -type f -name "*.log" -exec rm -f {} \;		
+fi
