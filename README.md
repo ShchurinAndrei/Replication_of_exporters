@@ -1,2 +1,3 @@
-# Replication_of_exporters
-Тиражирование node/postgres/sql exporter-ов
+# Тиражирование node/postgres/sql exporter-ов
+Скрипт для тиражирование, первичной настройки и запуска node/postgres/sql exporter-ов.
+Благодаря нему можно так же отслеживать в каком статусе сейчас находятся экспортеры и перезапускать их.
